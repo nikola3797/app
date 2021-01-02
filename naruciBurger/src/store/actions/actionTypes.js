@@ -1,0 +1,4 @@
+export const INPUT_USERNAME = 'INPUT_USERNAME';
+export const INPUT_PASSWORD = 'INPUT_PASSWORD';
+
+export const SUBMIT_USER = 'SUBMIT_USER';
