@@ -1,13 +1,13 @@
 import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
-    ime: null,
-    prezime: null,
-    korIme: null,
-    sifra: null,
-    email: null,
-    adresa: null,
-    br_telefona: null,
+    name: null,
+    surname: null,
+    username: null,
+    password: null,
+    mail: null,
+    address: null,
+    phone: null,
     user: {}
 }
 
@@ -18,53 +18,53 @@ const reducer = (state = initialState, action) => {
     if (action.type === actionTypes.INPUT_IME) {
         return {
             ...state,
-            ime: action.payload,
-            user: { ...state.user, ime: action.payload }
+            name: action.payload,
+            user: { ...state.user, name: action.payload }
 
         };
     }
     if (action.type === actionTypes.INPUT_PREZIME) {
         return {
             ...state,
-            prezime: action.payload,
-            user: { ...state.user, ime: state.ime, prezime: action.payload }
+            surname: action.payload,
+            user: { ...state.user, name: state.name, surname: action.payload }
 
         };
     }
     if (action.type === actionTypes.INPUT_KOR_IME) {
         return {
             ...state,
-            korIme: action.payload,
-            user: { ...state.user, ime: state.ime, prezime: state.prezime, korIme: action.payload }
+            username: action.payload,
+            user: { ...state.user, name: state.name, surname: state.surname, username: action.payload }
 
         };
     }
     if (action.type === actionTypes.INPUT_SIFRA) {
         return {
             ...state,
-            sifra: action.payload,
-            user: { ...state.user, ime: state.ime, prezime: state.prezime, korIme: state.korIme, sifra: action.payload },
+            password: action.payload,
+            user: { ...state.user, name: state.name, surname: state.surname, username: state.username, password: action.payload },
         }
     }
     if (action.type === actionTypes.INPUT_EMAIL) {
         return {
             ...state,
-            email: action.payload,
-            user: { ...state.user, ime: state.ime, prezime: state.prezime, korIme: state.korIme, sifra: state.sifra, email: action.payload },
+            mail: action.payload,
+            user: { ...state.user, name: state.name, surname: state.surname, username: state.username, password: state.password, mail: action.payload },
         }
     }
     if (action.type === actionTypes.INPUT_ADRESA) {
         return {
             ...state,
-            adresa: action.payload,
-            user: { ...state.user, ime: state.ime, prezime: state.prezime, korIme: state.korIme, sifra: state.sifra, email: state.email, adresa: action.payload },
+            address: action.payload,
+            user: { ...state.user, name: state.name, surname: state.surname, username: state.username, password: state.password, mail: state.mail, address: action.payload },
         }
     }
     if (action.type === actionTypes.INPUT_TELEFON) {
         return {
             ...state,
-            br_telefona: action.payload,
-            user: { ...state.user, ime: state.ime, prezime: state.prezime, korIme: state.korIme, sifra: state.sifra, email: state.email, adresa: state.adresa, br_telefona: action.payload },
+            phone: action.payload,
+            user: { ...state.user, name: state.name, surname: state.surname, username: state.username, password: state.password, mail: state.mail, address: state.address, phone: action.payload },
         }
     }
     
