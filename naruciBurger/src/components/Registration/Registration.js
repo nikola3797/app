@@ -23,7 +23,13 @@ class Registration extends Component {
                 <label className={classes.Label}>Ime: </label>
                 <input className={classes.Input}  type="text" onChange = {(event) => this.props.onChangeIme(event.target.value)} />
                 <br />
-                <label className={classes.Label}>Password: </label>
+                <label className={classes.Label}>Prezime: </label>
+                <input className={classes.Input}  type="text" onChange = {(event) => this.props.onChangePrezime(event.target.value)} />
+                <br />
+                <label className={classes.Label}>Korisnicko ime: </label>
+                <input className={classes.Input}  type="text" onChange = {(event) => this.props.onChangeKorIme(event.target.value)} />
+                <br />
+                <label className={classes.Label}>Sifra: </label>
                 <input className={classes.Input}  type="password" onChange = {(event) => this.props.onChangeSifru(event.target.value)} />
                 <br />
                 <label className={classes.Label}>Email: </label>
@@ -36,9 +42,9 @@ class Registration extends Component {
                 <input className={classes.Input}  type="text" onChange = {(event) => this.props.onChangeTelefon(event.target.value)} />
                 <br />
                
-                <button to="/login"  className={classes.ButtonSuccess} onClick = {(event) => this._onSubmit(event)} >
+                <Link to="/login"  className={classes.ButtonSuccess} onClick = {(event) => this._onSubmit(event)} >
                     Potvrdi
-                </button>
+                </Link>
             </form>
         </div>
         )
@@ -48,11 +54,6 @@ class Registration extends Component {
 const mapStateToProps = state => {
     return {
 
-        ime: state.user.ime,
-        sifra: state.user.sifra,
-        email: state.user.email,
-        adresa: state.user.adresa,
-        telefon: state.user.br_telefon,
 
         user: state.user.user
 
@@ -63,6 +64,8 @@ const mapDispatchToProps = dispatch => {
     return {
 
         onChangeIme: (event) => dispatch(actionCreators.inputIme(event)),
+        onChangePrezime: (event) => dispatch(actionCreators.inputPrezime(event)),
+        onChangeKorIme: (event) => dispatch(actionCreators.inputKorIme(event)),
         onChangeSifru: (event) => dispatch(actionCreators.inputSifra(event)),
         onChangeEmail: (event) => dispatch(actionCreators.inputEmail(event)),
         onChangeAdresu: (event) => dispatch(actionCreators.inputAdresa(event)),

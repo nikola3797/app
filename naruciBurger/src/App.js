@@ -13,9 +13,11 @@ class App extends Component {
       <Switch>
         <Route path="/" exact component={BurgerBuilder} />
         <Route path="/login" component={Auth} />
-        <Route path="/registration" component={Registration} />
+        <Route path="/register" component={Registration} />
       </Switch>
     );
+	
+	
 
     
     return (

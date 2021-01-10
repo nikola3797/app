@@ -54,7 +54,7 @@ class Auth extends Component {
                     {this.state.logInSuccess ? <Redirect to="/" /> : null}
                     </button>
                 </form>
-                <Link to="/registration" className={classes.ButtonDanger}> Registruj se </Link>
+                <Link to="/register" className={classes.ButtonDanger}> Registruj se </Link>
             </div>
 
         )

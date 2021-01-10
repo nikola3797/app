@@ -8,6 +8,18 @@ export const inputIme = event => {
         payload: event
     };
 };
+export const inputPrezime = event => {
+    return {
+        type: actionTypes.INPUT_PREZIME,
+        payload: event
+    };
+};
+export const inputKorIme = event => {
+    return {
+        type: actionTypes.INPUT_KOR_IME,
+        payload: event
+    };
+};
 export const inputSifra = event => {
     return {
         type: actionTypes.INPUT_SIFRA,
@@ -36,7 +48,7 @@ export const inputTelefon = event => {
 export const enterUser = (user) => {
 
     return dispache => {
-        axios.post('http://localhost:8080/registration', user)
+        axios.post('http://localhost:8080/register', user)
             .then(response => {
                 console.log(user);
             })
