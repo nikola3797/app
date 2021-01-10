@@ -2,23 +2,19 @@ import React, { Component } from 'react';
 import classes from './Auth.css';
 import { connect } from 'react-redux';
 import * as actions from '../../store/actions/Auth';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 
 
 
 class Auth extends Component {
 
+    
+
     state = {
         logInSuccess: false,
         isSignup: true
-    }
-
-
-    switchAuthModeHandler = () => {
-        this.setState(prevState => {
-            return { isSignup: !prevState.isSignup };
-        });
     }
 
     onClick = (event) => {
@@ -47,7 +43,7 @@ class Auth extends Component {
         return (
             <div className={classes.Auth}>
                 <form>
-                    <label className={classes.Label}>Username: </label>
+                    <label className={classes.Label}>Email: </label>
                     <input className={classes.Input} onChange={(event) => this.props.onChangeInputUsername(event.target.value)} value={this.props.username} type="text" />
                     <br />
                     <label className={classes.Label}>Password: </label>
@@ -58,8 +54,7 @@ class Auth extends Component {
                     {this.state.logInSuccess ? <Redirect to="/" /> : null}
                     </button>
                 </form>
-                <button className={classes.ButtonDanger} onClick={() => this.switchAuthModeHandler()}>
-                    Prebaci na {this.state.isSignup ? 'Prijavljivanje' : 'Registrovanje'}</button>
+                <Link to="/registration" className={classes.ButtonDanger}> Registruj se </Link>
             </div>
 
         )

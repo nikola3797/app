@@ -8,12 +8,13 @@ import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter } from 'react-router-dom';
 import thunk from 'redux-thunk';
 import authReducer from './store/reducer/Auth';
+import userReducer from './store/reducer/User';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 
 const rootReducer = combineReducers({
-    
+    user: userReducer,
     auth: authReducer
 });
 
